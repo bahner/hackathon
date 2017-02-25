@@ -17,12 +17,13 @@ def send_random_pos(vis=False):
         display.set_pixel(x, y, 5)
     radio.send("%s,%s" % (x, y))
 
+
 min_id = random.randint(0, 10000)
 spillere.add(min_id)
 
 # INIT gamers
 while True:
-    msg = radio.recv():
+    msg = radio.recv()
     if msg:
         if msg == 'init':
             break
@@ -33,7 +34,7 @@ while True:
         display.show(len(spillere))
     if button_b.is_pressed():
         for i in range(10):
-            radio.send('init)
+            radio.send('init')
         break
 
 while True:
