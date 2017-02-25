@@ -23,7 +23,7 @@ spillere.add(min_id)
 
 # INIT gamers
 while True:
-    msg = radio.recv()
+    msg = radio.receive()
     if msg:
         if msg == 'init':
             break
