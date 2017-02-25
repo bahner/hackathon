@@ -30,8 +30,8 @@ while True:
             break
         else:
             spillere.add(msg)
-        if button_a.is_pressed():
-            radio.send(min_id)
+    if button_a.is_pressed():
+        radio.send(min_id)
     if button_b.is_pressed():
         for i in range(10):
             radio.send('init')
