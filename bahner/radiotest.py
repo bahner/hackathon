@@ -1,6 +1,8 @@
 from microbit import *
 import radio
+import uuid
 import random
+from lships.common import
 
 # INIT
 spillere = set()
@@ -9,10 +11,10 @@ radio.config(group=213)
 radio.on()
 
 # INIT gamers
-def _init():
+def init_game():
     """Initialize game"""
 
-    min_id = random.randint(0, 10000)
+    min_id = uuid.uuid4()
     spillere.add(min_id)
 
     while True:

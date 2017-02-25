@@ -1,5 +1,8 @@
 # coding: utf-8
 """Lage et kart over havområde for battleships"""
+
+import random
+
 class Kart(object):
     """Et kart over et havområde
 
@@ -26,3 +29,17 @@ class Kart(object):
         }
 
         return ret
+
+    def _xy_inc(self):
+        """Function decides on a direction to in-/decrement x and y
+
+        If x and y are both zero one of the must yield, and redraw.
+        """
+
+        while True:
+            self.xinc = random.randint(-1, 1)
+            self.yinc = random.randint(-1, 1)
+            if not xinc and not yinc:
+                continue
+            else:
+                break
