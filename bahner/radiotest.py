@@ -17,7 +17,7 @@ def send_random_pos(vis=False):
         display.set_pixel(x, y, 5)
     radio.send("%s,%s" % (x, y))
 
-def min_id = random.randint(0, 10000)
+min_id = random.randint(0, 10000)
 spillere.add(min_id)
 
 # INIT gamers
