@@ -23,7 +23,8 @@ spillere.add(min_id)
 
 # INIT gamers
 while True:
-    msg = radio.recv()
+    display.show(str(len(spillere)))
+    msg = radio.receive()
     if msg:
         if msg == 'init':
             break
@@ -31,7 +32,6 @@ while True:
             spillere.add(msg)
         if button_a.is_pressed():
             radio.send(min_id)
-        display.show(len(spillere))
     if button_b.is_pressed():
         for i in range(10):
             radio.send('init')
