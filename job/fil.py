@@ -1,3 +1,2 @@
-
-
-print("hello, world!")
+"""Jobs lessons"""
+from microbit import *

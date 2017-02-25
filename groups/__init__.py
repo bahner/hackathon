@@ -1,2 +1,4 @@
 # coding: utf-8
-x
+
+class Groups():
+    
