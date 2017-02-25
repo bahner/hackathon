@@ -41,4 +41,5 @@ while True:
     if button_a.is_pressed():
         display.clear()
         send_random_pos(vis=button_b.is_pressed())
-    
+
+#Hva er denne koden til? Dette er Gresk. Jeg vet du kan gresk, det kan ikke jeg.
