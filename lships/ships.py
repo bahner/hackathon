@@ -3,7 +3,7 @@
 
 import random
 
-class Kart(object):
+class Ship(object):
     """Et kart over et havområde
 
     Tar størrelse i x og y. Standard er 5x5 for
@@ -11,26 +11,28 @@ class Kart(object):
     """
 
     def __init__(self,
-                 nummer,
-                 eier=None,
-                 x=5,
-                 y=5):
+                 length,
+                 xmin=0,
+                 xmax=4,
+                 ymin=0,
+                 ymax=4
+                ):
         """Init havområde"""
 
-        self._id = nummer
-        self.eier = eier
-        self.map = [[0 for _ in range(x)] for _ in range(y)]
+        self.length = length
+        self.xmin = xmin
+        self.xmax = xmax
+        self.ymin = ymin
+        self.ymax = ymax
 
-    def status(self):
-        """Give status of object"""
-        ret = {
-            'nummer': self._id,
-            'eier': self.eier,
-        }
+    def _gen_start_pos(self):
+        """Generates a point within the allow range to start drawing.
+        """
 
-        return ret
+        self.x = random.randint(self.xmin, self.xmax)
+        self.y = random.randint(self.ymin, self.ymax)
 
-    def _xy_inc(self):
+    def _gen_incrementors(self):
         """Function decides on a direction to in-/decrement x and y
 
         If x and y are both zero one of the must yield, and redraw.
@@ -43,3 +45,6 @@ class Kart(object):
                 continue
             else:
                 break
+
+    def gen_ship(self):
+        """Generates a random ship"""
