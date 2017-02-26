@@ -109,7 +109,7 @@ def parse_init_msg(msg):
     spillere[key] = value
 
 
-def er_spillet_startet():
+def spillet_er_igang():
     """Evaluate whether or not game is Initialized properly"""
 
     # If any player has not seen all, then this is false
@@ -125,22 +125,21 @@ def start_spill():
     """Initialize game"""
 
     min_id = random.randint(0, 10000000)
-    parse_init_msg("%s:%s" % (min_id, 1))
+    spillere[min_id] = str(1)
 
     while True:
         # If someone sends bogus data, then continue.
-        try:
-            msg = radio.receive()
-        except ValueError:
-            continue
-        if msg:
+        display.clear()
+        msg = radio.receive()
+        if isinstance(msg, str):
             parse_init_msg(msg)
- 
-        display.show(spillere.get(min_id))
+
+        display.show(str(len(spillere)))
         # Use button a to
         if button_a.is_pressed():
-            radio.send("%s:%s" % (min_id, len(spillere)))
-        if button_b.is_pressed() and er_spillet_startet():
+            send_msg = "%s:%s" % (min_id, str(len(spillere)))
+            radio.send(send_msg)
+        if button_b.is_pressed() and spillet_er_igang():
             break
 
     return spillere
