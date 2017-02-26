@@ -1,5 +1,5 @@
 # coding: utf-8
-"""Lage et kart over havområde for battleships"""
+"""Lage et kart over havområde for Battleships"""
 
 import random
 
