@@ -5,7 +5,7 @@ from radio
 import random
 
 class Radio(object):
-    """Sender signaler mellem skip
+    """Sender signaler mellom skip
     """
 
     def __init__(self,
