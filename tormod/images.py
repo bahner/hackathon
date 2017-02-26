@@ -1,12 +1,14 @@
 from microbit import *
 
-foo = Image.SAD
-display.show(foo)
+foo = Image.HAPPY
+bilde = Image(10,10)
+x = 0
 
 while True:
     if button_a.is_pressed():
-        foo = foo.shift_right(-1)
+        x = x - 1
     elif button_b.is_pressed():
-        foo = foo.shift_right(1)
-    display.show(foo, clear=True)
+        x = x + 1
+    bilde.blit(foo, 0, 0, 4, 4, xdest=x, ydest=0)
+    display.show(bilde)
     sleep(1)

@@ -1,7 +1,0 @@
-bok = {
-  'tormod': 15,
-  'lars': 46,
-  'job': 18,
-}
-
-print(min(bok, key=bok.get))
