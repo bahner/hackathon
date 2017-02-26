@@ -48,6 +48,10 @@ while True:
     if button_a.is_pressed():
         display.clear()
         send_random_pos(vis=button_b.is_pressed())
+<<<<<<< HEAD
+
+#Hva er denne koden til? Dette er Gresk. Jeg vet du kan gresk, det kan ikke jeg.
+=======
     
 
 def send_random_pos(vis=False):
@@ -59,3 +63,4 @@ def send_random_pos(vis=False):
     if vis:
         display.set_pixel(x, y, 5)
     radio.send("%s,%s" % (x, y))
+>>>>>>> 3e4e51f5f64694215f43c0ee23cd182e5a6a1fd7
